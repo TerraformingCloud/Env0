@@ -7,7 +7,7 @@
 #
 
 provider "azurerm" {
-    version         =   ">=2.6"
+    version         =   ">= 2.8"
     client_id       =   var.client_id
     client_secret   =   var.client_secret
     subscription_id =   var.subscription_id
@@ -24,7 +24,7 @@ resource "azurerm_resource_group" "rg" {
     name        =   var.resource_group_name
     location    =   var.location
     tags        =   {
-        "project"       =   "Collabnix"
+        "project"       =   "Env0"
         "deployed_with" =   "Terraform"
     }
 }
@@ -39,7 +39,7 @@ resource "azurerm_virtual_network" "vnet" {
   location              =   azurerm_resource_group.rg.location
   address_space         =   [var.vnet_address_range]
    tags                 =   {
-        "project"       =   "Collabnix"
+        "project"       =   "Env0"
         "deployed_with" =   "Terraform"
     }
 }
